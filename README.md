@@ -14,6 +14,10 @@ Edit *pvoutput_config.py* and set your APIKey and SystemID
 
 Edit *xantrex_data.py* and change the Serial port if required. I am using a USB Serial adapter.
 
+Edit *weather.py* and change **w=########** to your area code. Delete **&u=c** if you want data displayed in Imperial (Farenheit, Miles, etc)
+
+Area code can be found by entering your suburb or town in the following site: http://woeid.rosselliot.co.nz/
+
 Setup a cron job to execute:
 
 ```python run_me.py --live``` at the desired intervals (every 5, 10, 15 min).
