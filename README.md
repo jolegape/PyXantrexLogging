@@ -8,8 +8,16 @@ Requires feedparser and pyserial
 
 ##Usage
 
-Clone to the desired path. Setup a cron job to execute:
+Clone to the desired path. 
+
+Edit *pvoutput_config.py* and set your APIKey and SystemID
+
+Edit *xantrex_data.py* and change the Serial port if required. I am using a USB Serial adapter.
+
+Setup a cron job to execute:
 
 ```python run_me.py --live``` at the desired intervals (every 5, 10, 15 min).
 
 ```python run_me.py --daily_summary``` at the desired time when inverter is offline. This will add the daily summary, update weather, etc
+
+My PVOutPut page: http://pvoutput.org/list.jsp?userid=6608
