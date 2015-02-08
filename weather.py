@@ -1,25 +1,16 @@
 #!/usr/bin/python
 import feedparser
-from datetime import datetime, date, time
 
 #Set Variables to ensure we start fresh
 min_temp = ''
 max_temp = ''
 code = ''
 
-#Get Current Date in YYYYMMDD format
-today_date = datetime.now().strftime("%Y%m%d")
-# print "Date: " + today_date
-
-#Get Current time in HH:MM format
-curr_time = datetime.now().strftime("%H:%M")
-# print "Time: " + curr_time
-
 #Yahoo RSS Weather URL
 #Change w=22722169 to match your area
 #Delete &u=c to convert to Imperial (Farenheit, Miles, etc)
 #Change &d=1 to however many days forecast you wnat. This will break getting the high and low unless you know another way
-weatherURL = feedparser.parse ('http://weather.yahooapis.com/forecastrss?w=22722169&u=c&d=1')
+weatherURL = feedparser.parse ('http://weather.yahooapis.com/forecastrss?w=########&u=c&d=1')
 
 #Get Yahoo Weather Code, min temp, max temp and weather text summary
 code = int(weatherURL.entries[0].yweather_forecast.get('code'))
@@ -48,19 +39,3 @@ elif code == 3200:
 	cd_text = "Not Sure"
 else:
 	cd_text = "Fine"
-
-# print "PV Output Weather Summary: " + cd_text
-# print "Low: " + min_temp
-# print "High: " + max_temp
-# print "Yahoo Weather Summary: " + forecast_text
-
-# file = open("MaxPower.txt","w")
-# file.write(min_temp + "," + today_date + "," + curr_time)
-# file.close
-
-# file = open("MaxPower.txt","r")
-# entry = file.readline()
-# file.close
-
-# print entry
-# print code
