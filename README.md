@@ -25,3 +25,7 @@ Setup a cron job to execute:
 ```python run_me.py --daily_summary``` at the desired time when inverter is offline. This will add the daily summary, update weather, etc
 
 My PVOutPut page: http://pvoutput.org/list.jsp?userid=6608
+
+##To Do
+
+Add MySql logging of data
