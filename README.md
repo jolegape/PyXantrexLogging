@@ -5,7 +5,9 @@ These scripts borrow heavily from PowerMon. I created this because I moved from 
 
 ##Requirements
 
-Requires feedparser and pyserial. If your distro doesn't have any of the requirements installed, run the command: ```apt-get install python python-serial python-feedparser curl```
+Requires feedparser and pyserial. If your distro doesn't have any of the requirements installed, run the command: 
+
+```apt-get install python python-serial python-feedparser curl```
 
 Also requires a free Open Weather Map account in order to utilise the API (http://openweathermap.org/)
 
@@ -18,8 +20,11 @@ Edit *pvoutput_config.py* and set your APIKey and SystemID
 Edit *xantrex_data.py* and change the Serial port if required. I am using a USB Serial adapter.
 
 Edit *weather.py* and make the following changes:
+
 **owm_api = '######'** to your Open Weather Map api key
+
 **owm_cityid = '######'** to your Open Weather Map city. A list of cities and ID's can be found at the following link: http://openweathermap.org/help/city_list.txt. ID is the first column
+
 **owm_unit - 'metric'** to imperial if you want data displayed in Imperial (Farenheit, Miles, etc)
 
 Setup a cron job to execute:
