@@ -15,6 +15,7 @@ try:
 
 		AddStatus = ('/usr/bin/curl -d "d=%s" -d "t=%s" -d "v1=%s" -d "v2=%s" -d "v5=%s" -d "v6=%s" -H "X-Pvoutput-Apikey:%s" -H "X-Pvoutput-SystemId:%s" --retry 2 %s' %(date, time, xantrex_data.KWHTODAY, xantrex_data.POUT, xantrex_data.MEASTEMP, xantrex_data.VOUT, APIKey, SystemID, StatusURL))
 		subprocess.call(AddStatus, shell=True)
+		print()
 		
 	elif sys.argv[1] == "--daily_summary":
 
@@ -22,6 +23,7 @@ try:
 
 		AddOutput = ('curl -d "d=%s" -d "g=%s" -d "pp=%s" -d "pt=%s" -H "X-Pvoutput-Apikey:%s" -H "X-Pvoutput-SystemId:%s" -d "tm=%s" -d "tx=%s" -d "cm=%s" --retry 2 %s' %(date, xantrex_data.KWHTODAY, PeakPower, PeakTime, APIKey, SystemID, min_temp, max_temp, "Updated " + time + ", " + forecast_text + ", Min: " + min_temp + "C, Max: " + max_temp + "C", OutputURL))
 		subprocess.call(AddOutput, shell=True)
+		print()
 
 	else:
 		print ("Incorrect argument has been entered. The following arguments are accepted:")
