@@ -5,6 +5,7 @@ These scripts borrow heavily from PowerMon. I created this because I moved from 
 ##Requirements
 
 Requires feedparser and pyserial
+Also requires a free Open Weather Map account in order to utilise the API (http://openweathermap.org/)
 
 ##Usage
 
@@ -14,9 +15,10 @@ Edit *pvoutput_config.py* and set your APIKey and SystemID
 
 Edit *xantrex_data.py* and change the Serial port if required. I am using a USB Serial adapter.
 
-Edit *weather.py* and change **w=########** to your area code. Delete **&u=c** if you want data displayed in Imperial (Farenheit, Miles, etc)
-
-Area code can be found by entering your suburb or town in the following site: http://woeid.rosselliot.co.nz/
+Edit *weather.py* and make the following changes:
+**owm_api = '######'** to your Open Weather Map api key
+**owm_cityid = '######'** to your Open Weather Map city. A list of cities and ID's can be found at the following link: http://openweathermap.org/help/city_list.txt. ID is the first column
+**owm_unit - 'metric'** to imperial if you want data displayed in Imperial (Farenheit, Miles, etc)
 
 Setup a cron job to execute:
 
